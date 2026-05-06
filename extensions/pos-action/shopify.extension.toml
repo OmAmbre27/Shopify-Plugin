@@ -1,0 +1,22 @@
+api_version = "2026-01"
+
+[[extensions]]
+type = "ui_extension"
+# Change the merchant-facing name of the extension in locales/en.default.json
+name = "t:name"
+uid = "8a3d8821-4959-69ee-f3d9-ef8c2abbdabbdfa70b63"
+handle = "pos-action"
+description = "A preact POS UI extension"
+
+# module: path to the file that contains your extension’s source code
+# target: string that describes where your extension appears in POS
+[[extensions.targeting]]
+module = "./src/Action.jsx"
+target = "pos.product-details.action.render"
+
+# You can omit the menu-item target and POS will provide a default menu item for this extension.
+# The menu item will present the action target on click.
+# This template has the same behavior as the POS-provided default, but is included for completeness.
+[[extensions.targeting]]
+module = "./src/MenuItem.jsx"
+target = "pos.product-details.action.menu-item.render"
